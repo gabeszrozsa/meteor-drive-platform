@@ -20,6 +20,10 @@ Router.route('/login', function () {
   this.render('accountLogin');
 });
 
+Router.route('/files', function () {
+  this.render('files');
+});
+
 Router.route('/profile', function () {
   this.render('profile', {
     data: function () {

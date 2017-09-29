@@ -1,0 +1,23 @@
+<template name="allFiles">
+  <table class="table table-condensed">
+      <tbody>
+          {{#each allFiles}}
+          <tr>
+              <td>{{uploadedAt}}</td>
+              <td>{{original.name}}</td>
+              <td>
+                  <a href="{{url}}">link</a>
+              </td>
+              <td>
+                  {{#if isUploaded}}
+                  uploaded
+                  {{/if}}
+              </td>
+              <td>
+                  <button class="delete-file">delete</button>
+              </td>
+          </tr>
+          {{/each}}
+      </tbody>
+  </table>
+</template>

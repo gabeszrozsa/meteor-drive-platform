@@ -7,3 +7,8 @@ Meteor.publish('allUsers', function() {
 
     return this.ready();
 });
+
+
+Meteor.publish("uploadedFiles", function () {
+  return UploadedFiles.find();
+});
