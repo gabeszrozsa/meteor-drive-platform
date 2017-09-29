@@ -1,0 +1,13 @@
+<template name="nav">
+  <ul>
+    {{#if loggedIn}}
+    <li><a href="/">Home</a></li>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/files">Files</a></li>
+    <li><a class="logout" href="#">Logout</a></li>
+    {{else}}
+    <li><a href="/register">Register</a></li>
+    <li><a href="/login">Login</a></li>
+    {{/if}}
+  </ul>
+</template>
