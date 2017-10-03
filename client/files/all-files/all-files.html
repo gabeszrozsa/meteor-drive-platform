@@ -1,17 +1,26 @@
 <template name="allFiles">
   <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Dátum</th>
+        <th>Név</th>
+        <th>Státusz</th>
+        <th>Letöltés</th>
+        <th>Törlés</th>
+      </tr>
+    </thead>
       <tbody>
           {{#each allFiles}}
           <tr>
-              <td>{{uploadedAt}}</td>
+              <td>{{date uploadedAt 'YYYY-MM-DD'}}</td>
+              <td>
+                {{#if isUploaded}}
+                uploaded
+                {{/if}}
+              </td>
               <td>{{original.name}}</td>
               <td>
                   <a href="{{url}}">link</a>
-              </td>
-              <td>
-                  {{#if isUploaded}}
-                  uploaded
-                  {{/if}}
               </td>
               <td>
                   <button class="delete-file">delete</button>
