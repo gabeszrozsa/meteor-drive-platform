@@ -5,18 +5,26 @@ Template.changePassword.events({
     const password1 = $('#password-1').val();
     const password2 = $('#password-2').val();
     let newPassword = '';
-    // TODO: toastr
 
     if (password1 === password2) {
       newPassword = password1;
       Accounts.changePassword(oldPassword, newPassword, function(error){
         if (!error) {
-          console.log("pass changed!");
+          toastr.success('A jelszó megváltozott!');
 
+          $('#old-password').val('');
+          $('#password-1').val('');
+          $('#password-2').val('');
+
+        } else {
+          $('#old-password').val('').focus();
+          toastr.error('A jelenlegi jelszó hibás!')
         }
       })
     } else {
-      console.log("wrong passwords")
+      toastr.error('A két új jelszó nem egyezik meg!');
+      $('#password-2').val('');
+      $('#password-1').val('').focus();
     }
 
   }

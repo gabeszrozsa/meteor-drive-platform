@@ -1,13 +1,33 @@
 <template name="nav">
-  <ul>
-    {{#if loggedIn}}
-    <li><a href="/">Home</a></li>
-    <li><a href="/profile">Profile</a></li>
-    <li><a href="/files">Files</a></li>
-    <li><a class="logout" href="#">Logout</a></li>
-    {{else}}
-    <li><a href="/register">Register</a></li>
-    <li><a href="/login">Login</a></li>
-    {{/if}}
-  </ul>
+
+  <nav class="light-blue darken-3">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Drive Platform</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse">
+        <i class="fa fa-bars"></i>
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if loggedIn}}
+        <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="/files"><i class="fa fa-file-text" aria-hidden="true"></i> Files</a></li>
+        <li><a href="/profile"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+        <li><a class="logout" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        {{else}}
+        <li><a href="/register"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
+        <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+        {{/if}}
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        {{#if loggedIn}}
+        <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="/files"><i class="fa fa-file-text" aria-hidden="true"></i> Files</a></li>
+        <li><a href="/profile"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+        <li><a class="logout" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        {{else}}
+        <li><a href="/register"><i class="fa fa-user-plus" aria-hidden="true"></i> Register</a></li>
+        <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
 </template>

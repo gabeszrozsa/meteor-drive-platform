@@ -4,4 +4,8 @@ Template.nav.events({
     Meteor.logout();
     Router.go('/');
   }
-}); 
+});
+
+Template.nav.onRendered(function() {
+  $(".button-collapse").sideNav();
+});
